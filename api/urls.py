@@ -1,0 +1,15 @@
+from django.urls import path , include
+from rest_framework import routers
+from django.conf.urls import include
+from .views import *
+
+router = routers.DefaultRouter()
+router.register('meals', MealViewSet)
+router.register('ratings', RatingViewSet)
+
+
+
+
+urlpatterns = [
+    path("" , include(router.urls)),
+]
